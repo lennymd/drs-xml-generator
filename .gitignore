@@ -44,3 +44,8 @@ book_reviews-*.xml
 *.csv
 *.tmp
 *.log
+
+
+# directories -- we don't want that data online
+/data
+/output  
