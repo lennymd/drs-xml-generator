@@ -216,7 +216,10 @@ def populate_proceedings_metadata(
         add_series_metadata(temp_root, conf_info)
 
     # proceedings_title
-    etree.SubElement(temp_root, "proceedings_title").text = conf_info.get("name", "")
+    proceedings_title = conf_info.get("proceedings_title", "")
+    if not proceedings_title:
+        proceedings_title = conf_info.get("name", "")
+    etree.SubElement(temp_root, "proceedings_title").text = proceedings_title
 
     # publisher
     publisher = etree.SubElement(temp_root, "publisher")
@@ -299,8 +302,9 @@ def add_contributors(parent: etree.Element, record: dict) -> None:
         lname_key = f"author{index}_lname"
         inst_key = f"author{index}_institution"
 
+        lname = record.get(lname_key, "").strip()
         fname = record.get(fname_key, "").strip()
-        if not fname:
+        if not lname:
             break  # No more authors, exit loop
 
         # Set sequence attribute: first author vs additional authors
@@ -312,10 +316,11 @@ def add_contributors(parent: etree.Element, record: dict) -> None:
             sequence=sequence,
             contributor_role="author",
         )
-        etree.SubElement(person_name, "given_name").text = fname
-        etree.SubElement(person_name, "surname").text = record.get(
-            lname_key, ""
-        ).strip()
+
+        if fname:
+            etree.SubElement(person_name, "given_name").text = fname
+
+        etree.SubElement(person_name, "surname").text = lname
 
         # Add affiliation only if institution_name exists and is non-empty
         institution_name = record.get(inst_key, "").strip()
