@@ -135,7 +135,8 @@ def populate_book_review_body(
 
         # Publication date
         publication_date = etree.SubElement(report_paper_metadata, "publication_date")
-        date_str = record.get("publication_date", "").split(" ")[0]  # e.g. "2023-06-05"
+        our_date = record.get("publication_date", "")
+        date_str = str(our_date).strip().split(" ")[0]  # e.g. "2023-06-05"
 
         year_data, month_data, day_data = date_str.split("-")
         etree.SubElement(publication_date, "year").text = year_data
