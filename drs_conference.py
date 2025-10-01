@@ -9,17 +9,17 @@ from drsxml.core import (
 
 # Define the conference information
 conf_info = {
-    "data_file": "25.xls",
-    "name": "Nordes 2025: Relational Design",
-    "acronym": "Nordes 2025",
-    "volume_doi": "10.21606/nordes.2025.cv",
-    "volume_url": "https://dl.designresearchsociety.org/conference-volumes/67/",
-    "issn": "16049705",
-    "isbn": "",
-    "series_title": "Nordic Design Research Conference",
+    "data_file": "drsf25.xls",
+    "name": "Designing Retail & Services Futures Colloquium 2025: Sustainable Retail and Services Futures",
+    "acronym": "DRSF 2025",
+    "volume_doi": "10.21606/drsf.102",
+    "volume_url": "https://dl.designresearchsociety.org/conference-volumes/68/",
+    "issn": "",
+    "isbn": "9781912294664",
+    "series_title": "",
 }
 
-OUT_FILE = "250805-nordes2025.xml"
+OUT_FILE = "250929-drsf2025.xml"
 
 # Load the data from the XLS file
 records = load_xls_data(conf_info.get("data_file"))
