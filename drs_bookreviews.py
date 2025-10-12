@@ -8,7 +8,7 @@ from drsxml.core import (
 
 # LOAD XLS FILE FOR PROCESSING
 
-FILE = "books0805.xls"
+FILE = "books1012.xls"
 
 records = load_xls_data(FILE)
 
