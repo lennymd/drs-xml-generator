@@ -9,17 +9,17 @@ from drsxml.core import (
 
 # Define the conference information
 conf_info = {
-    "data_file": "servdes25.xls",
-    "name": "ServDes 2025: Empowering Diversity, Nurturing Lasting Impact",
-    "acronym": "ServDes2025",
-    "volume_doi": "10.21606/servdes2025.cv",
-    "volume_url": "https://dl.designresearchsociety.org/servdes/servdes2025/",
+    "data_file": "20.xls",
+    "name": "ServDes 2020: Tensions, Paradoxes and Plurality",
+    "acronym": "ServDes2020",
+    "volume_doi": "10.21606/servdes2020.cv",
+    "volume_url": "https://dl.designresearchsociety.org/servdes/servdes2020/",
     "issn": "",
     "isbn": "",
     "series_title": "",
 }
 
-OUT_FILE = "251011-servdes2025.xml"
+OUT_FILE = "251013-servdes2020.xml"
 
 # Load the data from the XLS file
 records = load_xls_data(conf_info.get("data_file"))
