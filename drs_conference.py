@@ -9,17 +9,17 @@ from drsxml.core import (
 
 # Define the conference information
 conf_info = {
-    "data_file": "25.xls",
-    "name": "EKSIG 2025: Data as Experiential Knowledge and Embodied Processes",
-    "acronym": "EKSIG 2025",
-    "volume_doi": "10.21606/eksig2025.cv",
-    "volume_url": "https://dl.designresearchsociety.org/conference-volumes/69/",
+    "data_file": "lxd25.xls",
+    "name": "LearnXDesign 2025",
+    "acronym": "LearnXDesign 2025",
+    "volume_doi": "10.21606/drslxd.2025.cv",
+    "volume_url": "https://dl.designresearchsociety.org/learnxdesign/learnxdesign2025",
     "issn": "",
     "isbn": "",
     "series_title": "",
 }
 
-OUT_FILE = "260220-eksig25.xml"
+OUT_FILE = "260309-lxd25.xml"
 
 # Load the data from the XLS file
 records = load_xls_data(conf_info.get("data_file"))
